@@ -52,9 +52,50 @@ class MenuPage extends StatelessWidget {
               title: Text(item.nama),
               subtitle: Text('Rp ${item.harga}'),
               trailing: const Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => DetailPage(makanan: item),
+                  ),
+                );
+              },
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class DetailPage extends StatelessWidget {
+  final Makanan makanan;
+  const DetailPage({super.key, required this.makanan});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(makanan.nama),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.restaurant_menu, size: 80),
+            const SizedBox(height: 16),
+            Text(
+              makanan.nama,
+              style: const TextStyle(fontSize: 24),
+            ),
+            Text('Rp ${makanan.harga}'),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Kembali'),
+            ),
+          ],
+        ),
       ),
     );
   }

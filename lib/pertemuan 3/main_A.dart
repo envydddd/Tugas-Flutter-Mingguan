@@ -60,9 +60,7 @@ class _InputPageState extends State<InputPage> {
               child: const Text('Sapa'),
             ),
             const SizedBox(height: 12),
-            Text(
-              _salam,
-              style: const TextStyle(fontSize: 20),
+            Text(_salam, style: const TextStyle(fontSize: 20),
             ),
           ],
         ),
