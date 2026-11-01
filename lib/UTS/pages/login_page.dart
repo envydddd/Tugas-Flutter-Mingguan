@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'guest_home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -8,22 +9,35 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.pool, size: 100, color: Colors.blueAccent),
+              const Icon(
+                Icons.pool,
+                size: 100,
+                color: Colors.blueAccent,
+              ),
               const SizedBox(height: 24),
               Text(
                 'Selamat Datang di Billiard',
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 8),
-              const Text('Reservasi Meja Anda Kini Lebih Mudah', textAlign: TextAlign.center),
+              const Text(
+                'Reservasi Meja Anda Kini Lebih Mudah',
+                textAlign: TextAlign.center,
+              ),
               const SizedBox(height: 48),
               ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/home');
+                  Navigator.pushReplacementNamed(
+                    context,
+                    '/home',
+                  );
                 },
                 icon: const Icon(Icons.login),
                 label: const Text('Sign In with Google'),
@@ -35,9 +49,21 @@ class LoginPage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               TextButton(
-                onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
-                child: const Text('Lanjutkan sebagai Tamu', style: TextStyle(color: Colors.grey)),
-              )
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const GuestHomePage(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Lanjutkan sebagai Tamu',
+                  style: TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
