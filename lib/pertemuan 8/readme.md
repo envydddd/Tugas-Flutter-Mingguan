@@ -2,6 +2,9 @@
 # Praktikum Flutter Lanjutan - Pertemuan 8
 **Topik:** Docker Compose dan Kerangka Backend TabungKu Cloud
 
+**Nama :** David Yehezkiel
+**NIM :** 20240801013
+
 ## Deskripsi Proyek
 
 Pada pertemuan ini, aplikasi **TabungKu** mulai bertransformasi dari penyimpanan lokal (SQLite) menuju arsitektur berbasis *cloud* (**TabungKu Cloud**). Seluruh layanan *server* dijalankan secara terpadu menggunakan **Docker Compose** yang mencakup layanan basis data **MySQL 8.4** dan *backend* REST API menggunakan **FastAPI**, serta dihubungkan dengan aplikasi mobile **Flutter** untuk memantau status koneksi server.
